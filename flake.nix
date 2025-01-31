@@ -590,6 +590,11 @@
       flake = false;
     };
 
+    plugin-yanky-nvim = {
+      url = "github:gbprod/yanky.nvim";
+      flake = false;
+    };
+
     # Note-taking
     plugin-obsidian-nvim = {
       url = "github:epwalsh/obsidian.nvim";
@@ -640,7 +645,7 @@
     };
 
     plugin-nvim-colorizer-lua = {
-      url = "github:NvChad/nvim-colorizer.lua";
+      url = "github:catgoose/nvim-colorizer.lua";
       flake = false;
     };
 
