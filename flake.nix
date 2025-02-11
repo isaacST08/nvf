@@ -17,6 +17,8 @@
       # «https://github.com/nix-systems/nix-systems»
       systems = import inputs.systems;
       imports = [
+        ./flake/templates
+
         ./flake/apps.nix
         ./flake/legacyPackages.nix
         ./flake/overlays.nix
@@ -289,6 +291,16 @@
     # Statuslines
     plugin-lualine = {
       url = "github:hoob3rt/lualine.nvim";
+      flake = false;
+    };
+
+    plugin-blink-cmp = {
+      url = "github:saghen/blink.cmp";
+      flake = false;
+    };
+
+    plugin-blink-compat = {
+      url = "github:saghen/blink.compat";
       flake = false;
     };
 

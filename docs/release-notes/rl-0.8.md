@@ -47,6 +47,12 @@
 
 - Add Haskell support under `vim.languages.haskell` using [haskell-tools.nvim].
 
+[horriblename](https://github.com/horriblename):
+
+[blink.cmp]: https://github.com/saghen/blink.cmp
+
+- Add [blink.cmp] support
+
 [diniamo](https://github.com/diniamo):
 
 - Add Odin support under `vim.languages.odin`.
@@ -139,3 +145,7 @@
 
 - Add `vim.languages.zig.dap` support through pkgs.lldb dap adapter. Code
   Inspiration from `vim.languages.clang.dap` implementation.
+
+[nezia1](https://github.com/nezia1)
+
+- Add support for [nixd](https://github.com/nix-community/nixd) language server.
