@@ -40,6 +40,7 @@ in {
     ./typst.nix
     ./vala.nix
     ./wgsl.nix
+    ./yaml.nix
     ./zig.nix
   ];
 
