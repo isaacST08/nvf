@@ -5,6 +5,8 @@
 - `git-conflict` keybinds are now prefixed with `<leader>` to avoid conflicting
   with builtins.
 
+- `alpha` is now configured with nix, default config removed.
+
 [NotAShelf](https://github.com/notashelf):
 
 [typst-preview.nvim]: https://github.com/chomosuke/typst-preview.nvim
@@ -46,6 +48,14 @@
     Pick only one.
 
 - Add [yanky.nvim] to available plugins, under `vim.utility.yanky-nvim`.
+
+- Fix plugin `setupOpts` for yanky.nvim and assert if shada is configured as a
+  backend while shada is disabled in Neovim options.
+
+- Add [yazi.nvim] as a companion plugin for Yazi, the terminal file manager.
+
+- Add [](#opt-vim.autocmds) and [](#opt-vim.augroups) to allow declaring
+  autocommands via Nix.
 
 - Fix plugin `setupOpts` for yanky.nvim and assert if shada is configured as a
   backend while shada is disabled in Neovim options.
@@ -227,3 +237,7 @@
 [projekt0n/github-nvim-theme]: https://github.com/projekt0n/github-nvim-theme
 
 - Add `github-nvim-theme` theme from [projekt0n/github-nvim-theme].
+
+[BANanaD3V](https://github.com/BANanaD3V):
+
+- `alpha` is now configured with nix.
