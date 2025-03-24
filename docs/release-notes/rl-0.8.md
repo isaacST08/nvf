@@ -2,10 +2,17 @@
 
 ## Breaking changes
 
+[Lspsaga documentation]: https://nvimdev.github.io/lspsaga/
+
 - `git-conflict` keybinds are now prefixed with `<leader>` to avoid conflicting
   with builtins.
 
 - `alpha` is now configured with nix, default config removed.
+
+- Lspsaga module no longer ships default keybindings. The keybind format has
+  been changed by upstream, and old keybindings do not have equivalents under
+  the new API they provide. Please manually set your keybinds according to
+  [Lspsaga documentation] following the new API.
 
 [NotAShelf](https://github.com/notashelf):
 
@@ -13,6 +20,7 @@
 [render-markdown.nvim]: https://github.com/MeanderingProgrammer/render-markdown.nvim
 [yanky.nvim]: https://github.com/gbprod/yanky.nvim
 [yazi.nvim]: https://github.com/mikavilpas/yazi.nvim
+[snacks.nvim]: https://github.com/folke/snacks.nvim
 
 - Add [typst-preview.nvim] under
   `languages.typst.extensions.typst-preview-nvim`.
@@ -62,6 +70,14 @@
 
 - Add [yazi.nvim] as a companion plugin for Yazi, the terminal file manager.
 
+- Add [snacks.nvim] under `vim.utility.snacks-nvim` as a general-purpose utility
+  plugin.
+
+- Move LSPSaga to `setupOpts` format, allowing freeform configuration in
+  `vim.lsp.lspsaga.setupOpts`.
+
+- Lazyload Lspsaga and remove default keybindings for it.
+
 [amadaluzia](https://github.com/amadaluzia):
 
 [haskell-tools.nvim]: https://github.com/MrcJkb/haskell-tools.nvim
@@ -73,6 +89,7 @@
 [blink.cmp]: https://github.com/saghen/blink.cmp
 
 - Add [blink.cmp] support.
+- Add `LazyFile` user event.
 
 [diniamo](https://github.com/diniamo):
 
@@ -159,16 +176,20 @@
 [thamenato](https://github.com/thamenato):
 
 [ruff]: (https://github.com/astral-sh/ruff)
+[cue]: (https://cuelang.org/)
 
 - Add [ruff] as a formatter option in `vim.languages.python.format.type`.
+- Add [cue] support under `vim.languages.cue`.
 
 [ARCIII](https://github.com/ArmandoCIII):
 
 [leetcode.nvim]: https://github.com/kawre/leetcode.nvim
+[codecompanion-nvim]: https://github.com/olimorris/codecompanion.nvim
 
 - Add `vim.languages.zig.dap` support through pkgs.lldb dap adapter. Code
   Inspiration from `vim.languages.clang.dap` implementation.
 - Add [leetcode.nvim] plugin under `vim.utility.leetcode-nvim`.
+- Add [codecompanion.nvim] plugin under `vim.assistant.codecompanion-nvim`.
 
 [nezia1](https://github.com/nezia1):
 
@@ -226,6 +247,7 @@
 - Add [blink.cmp] option to add
   [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) so
   blink.cmp can source snippets from it.
+- Fix [blink.cmp] breaking when built-in sources were modified.
 
 [TheColorman](https://github.com/TheColorman):
 
@@ -241,3 +263,16 @@
 [BANanaD3V](https://github.com/BANanaD3V):
 
 - `alpha` is now configured with nix.
+
+[viicslen](https://github.com/viicslen):
+
+- Add `intelephense` language server support under
+  `vim.languages.php.lsp.server`
+
+[Butzist](https://github.com/butzist):
+
+- Add Helm chart support under `vim.languages.helm`.
+
+[rice-cracker-dev](https://github.com/rice-cracker-dev):
+
+- `eslint_d` now checks for configuration files to load.
