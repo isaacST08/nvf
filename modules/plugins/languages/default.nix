@@ -1,4 +1,8 @@
-{lib, ...}: let
+{
+  config,
+  lib,
+  ...
+}: let
   inherit (lib.nvim.languages) mkEnable;
 in {
   imports = [
@@ -12,6 +16,7 @@ in {
     ./css.nix
     ./dart.nix
     ./elixir.nix
+    ./fsharp.nix
     ./gleam.nix
     ./go.nix
     ./hcl.nix
@@ -51,7 +56,11 @@ in {
   ];
 
   options.vim.languages = {
-    enableLSP = mkEnable "LSP";
+    # LSPs are now built into Neovim, and we should enable them by default
+    # if `vim.lsp.enable` is true.
+    enableLSP = mkEnable "LSP" // {default = config.vim.lsp.enable;};
+
+    # Those are still managed by plugins, and should be enabled here.
     enableDAP = mkEnable "Debug Adapter";
     enableTreesitter = mkEnable "Treesitter";
     enableFormat = mkEnable "Formatting";

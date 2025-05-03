@@ -20,6 +20,7 @@ formatting to diagnostics. The following languages have sections under the
 - Lua: [vim.languages.lua.enable](#opt-vim.languages.lua.enable)
 - PHP: [vim.languages.php.enable](#opt-vim.languages.php.enable)
 - Tex: [vim.languages.tex.enable](#opt-vim.languages.tex.enable)
+- F#: [vim.languages.fsharp.enable](#opt-vim.languages.fsharp.enable)
 
 Adding support for more languages, and improving support for existing ones are
 great places where you can contribute with a PR.
