@@ -15,9 +15,14 @@ isMaximal: {
 
     spellcheck = {
       enable = true;
+      programmingWordlist.enable = isMaximal;
     };
 
     lsp = {
+      # This must be enabled for the language modules to hook into
+      # the LSP API.
+      enable = true;
+
       formatOnSave = true;
       lspkind.enable = false;
       lightbulb.enable = true;
@@ -38,7 +43,6 @@ isMaximal: {
     # This section does not include a comprehensive list of available language modules.
     # To list all available language module options, please visit the nvf manual.
     languages = {
-      enableLSP = true;
       enableFormat = true;
       enableTreesitter = true;
       enableExtraDiagnostics = true;
@@ -150,7 +154,6 @@ isMaximal: {
     binds = {
       whichKey.enable = true;
       cheatsheet.enable = true;
-      hardtime-nvim.enable = isMaximal;
     };
 
     telescope.enable = true;
@@ -159,6 +162,7 @@ isMaximal: {
       enable = true;
       gitsigns.enable = true;
       gitsigns.codeActions.enable = false; # throws an annoying debug message
+      neogit.enable = isMaximal;
     };
 
     minimap = {
@@ -188,6 +192,9 @@ isMaximal: {
       surround.enable = isMaximal;
       leetcode-nvim.enable = isMaximal;
       multicursors.enable = isMaximal;
+      smart-splits.enable = isMaximal;
+      undotree.enable = isMaximal;
+      nvim-biscuits.enable = isMaximal;
 
       motion = {
         hop.enable = true;
@@ -196,6 +203,7 @@ isMaximal: {
       };
       images = {
         image-nvim.enable = false;
+        img-clip.enable = isMaximal;
       };
     };
 
@@ -244,6 +252,7 @@ isMaximal: {
         cmp.enable = isMaximal;
       };
       codecompanion-nvim.enable = false;
+      avante-nvim.enable = isMaximal;
     };
 
     session = {

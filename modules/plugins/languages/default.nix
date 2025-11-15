@@ -1,30 +1,24 @@
-{
-  config,
-  lib,
-  ...
-}: let
+{lib, ...}: let
+  inherit (lib.modules) mkRenamedOptionModule;
   inherit (lib.nvim.languages) mkEnable;
 in {
   imports = [
     ./asm.nix
     ./astro.nix
     ./bash.nix
-    ./cue.nix
-    ./dart.nix
     ./clang.nix
+    ./clojure.nix
     ./csharp.nix
     ./css.nix
+    ./cue.nix
     ./dart.nix
     ./elixir.nix
     ./fsharp.nix
     ./gleam.nix
     ./go.nix
-    ./hcl.nix
-    ./helm.nix
-    ./kotlin.nix
-    ./html.nix
     ./haskell.nix
     ./hcl.nix
+    ./helm.nix
     ./html.nix
     ./java.nix
     ./julia.nix
@@ -53,13 +47,12 @@ in {
     ./wgsl.nix
     ./yaml.nix
     ./zig.nix
+
+    # This is now a hard deprecation.
+    (mkRenamedOptionModule ["vim" "languages" "enableLSP"] ["vim" "lsp" "enable"])
   ];
 
   options.vim.languages = {
-    # LSPs are now built into Neovim, and we should enable them by default
-    # if `vim.lsp.enable` is true.
-    enableLSP = mkEnable "LSP" // {default = config.vim.lsp.enable;};
-
     # Those are still managed by plugins, and should be enabled here.
     enableDAP = mkEnable "Debug Adapter";
     enableTreesitter = mkEnable "Treesitter";
